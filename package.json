@@ -1,0 +1,15 @@
+{
+  "name": "atom-crux-syntax",
+  "theme": "syntax",
+  "version": "0.1.0",
+  "description": "Focus to cruxes in text",
+  "keywords": [
+    "syntax",
+    "theme"
+  ],
+  "repository": "https://github.com/purplestone/atom-crux-syntax",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
+}
