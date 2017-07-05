@@ -1,7 +1,7 @@
 @import 'syntax-variables';
 
 atom-text-editor {
-  background-color: @syntax-background-color;
+  background-color: #191714;
   color: @syntax-text-color;
 
   .invisible-character {
@@ -20,6 +20,9 @@ atom-text-editor {
     background-color: @syntax-gutter-background-color;
   }
   .gutter .cursor-line {
+    background-color: @syntax-gutter-background-color-selected;
+  }
+  .cursor-line {
     background-color: @syntax-gutter-background-color-selected;
   }
   .line-number.cursor-line-no-selection {
@@ -107,23 +110,45 @@ atom-text-editor {
 }
 
 .syntax--comment {
-  color: #7C7C7C;
+  color: @weakWhite;
 }
 
 .syntax--entity {
   color: @blue;
 
-  &.syntax--name.syntax--type {
-
+  &.syntax--other.syntax--attribute-name {
+    color: #C6C5FE;
   }
+  &.syntax--name.syntax--type {
+    color: @red;
+  }
+
+  &.syntax--name.syntax--tag.syntax--namespace,
+  &.syntax--other.syntax--attribute-name.syntax--namespace {
+    color: #E18964;
+  }
+
 
   &.syntax--other.syntax--inherited-class {
     color: #9B5C2E;
   }
 }
+
+.syntax--entity.syntax--name.syntax--function {
+  color: @lightGreen;
+}
+.syntax--function {
+  .syntax--entity.syntax--name.syntax--function {
+    color: @lightYellow;
+  }
+
+}
+
 .syntax--method-call {
 	.syntax--entity {
-		color:@green;
+    &.syntax--name.syntax--function {
+		    color:@lightGreen;
+    }
 	}
 }
 
@@ -131,7 +156,7 @@ atom-text-editor {
   color: @weakBlue;
 
   &.syntax--control {
-    color: @weakBlue;
+    color: @blue;
   }
 
   &.syntax--operator {
@@ -144,9 +169,6 @@ atom-text-editor {
 		color:@white;
 	}
 }
-.syntax--variable.syntax--parameter {
-	color:@lightPurple;
-}
 
 .syntax--storage {
   color: @weakBlue;
@@ -157,15 +179,24 @@ atom-text-editor {
 }
 
 .syntax--constant {
-  color: #99CC99;
+  color: @cyan;
 
   &.syntax--numeric {
-    color: #FF73FD;
+    color: @lightCyan;
   }
 }
 
+.syntax--arguments {
+  color:@lightWhite;
+}
 .syntax--variable {
-  color: #C6C5FE;
+  color: @white;
+  &.syntax--parameter {
+  	color:@lightPurple;
+  }
+  &.syntax--property{
+    color:@lightWhite;
+  }
 }
 
 .syntax--invalid.syntax--deprecated {
@@ -208,13 +239,13 @@ atom-text-editor {
 		.syntax--punctuation {
 			color:@weakPink;
 		}
-		color:@lightPink;
+		color:@pink;
 	}
 	&.syntax--double {
 		.syntax--punctuation {
 			color:@weakYellow;
 		}
-		color:@lightYellow;
+		color:@yellow;
 	}
   .syntax--constant {
     color: #00A0A0;
@@ -248,7 +279,7 @@ atom-text-editor {
   color: @orange;
 
   &.syntax--function {
-    color: @red;
+    color: @lightRed;
   }
 
   &.syntax--constant {
@@ -268,16 +299,7 @@ atom-text-editor {
   color: #C6C5FE;
 }
 
-.syntax--entity {
-  &.syntax--other.syntax--attribute-name {
-    color: #C6C5FE;
-  }
 
-  &.syntax--name.syntax--tag.syntax--namespace,
-  &.syntax--other.syntax--attribute-name.syntax--namespace {
-    color: #E18964;
-  }
-}
 
 .syntax--custom.syntax--weakKey{
 	color:@weakOrange;
