@@ -3,7 +3,6 @@
 atom-text-editor {
   background-color: #191714;
   color: @syntax-text-color;
-
   .invisible-character {
     color: @syntax-invisible-character-color;
   }
@@ -43,6 +42,9 @@ atom-text-editor {
     border-color: @syntax-cursor-color;
   }
 
+  .find-result .region {
+    border-color: #007d0f;
+  }
   .selection .region {
     background-color: @syntax-selection-color;
   }
@@ -138,12 +140,14 @@ atom-text-editor {
   color: @lightGreen;
 }
 .syntax--function {
-  .syntax--entity.syntax--name.syntax--function {
+  > .syntax--entity.syntax--name.syntax--function {
     color: @lightYellow;
   }
 
 }
-
+.syntax--subtlegradient>.syntax--block>.syntax--with-arguments .syntax--entity.syntax--name.syntax--function {
+  color: @lightYellow;
+}
 .syntax--method-call {
 	.syntax--entity {
     &.syntax--name.syntax--function {
@@ -157,6 +161,10 @@ atom-text-editor {
 
   &.syntax--control {
     color: @blue;
+  }
+
+  &.syntax--def {
+    color:@weakBlue;
   }
 
   &.syntax--operator {
@@ -182,7 +190,7 @@ atom-text-editor {
   color: @cyan;
 
   &.syntax--numeric {
-    color: @lightCyan;
+    color: @cyan;
   }
 }
 
@@ -247,6 +255,9 @@ atom-text-editor {
 		}
 		color:@yellow;
 	}
+  &.syntax--unquoted {
+    color:@orange;
+  }
   .syntax--constant {
     color: #00A0A0;
   }
@@ -276,7 +287,7 @@ atom-text-editor {
 }
 
 .syntax--support {
-  color: @orange;
+  color: @red;
 
   &.syntax--function {
     color: @lightRed;
